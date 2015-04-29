@@ -4,16 +4,17 @@ module Functions (
 	ackermann
 	) where
 	
-	-----------------------------------------------------------
+	--generates infinite list of factorial elements
 	
 	factorialSequence :: [Int]
 	factorialSequence = facto 0 1
 		where facto n acc = acc : facto (n + 1) (acc * (n + 1))
 
+	--takes required element from this list
 	factorial :: Int -> Int
 	factorial x = factorialSequence !! x
 
-	-----------------------------------------------------------
+	--same as factorial
 	
 	fibonacciSequence :: [Int]
 	fibonacciSequence = 1:fib 1 1

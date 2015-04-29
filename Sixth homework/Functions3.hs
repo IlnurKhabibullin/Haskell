@@ -1,4 +1,4 @@
-module Functions2 (
+module Functions3 (
 	foldl_map,
 	foldr_map,
 	r_concatMap
