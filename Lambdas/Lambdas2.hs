@@ -1,4 +1,4 @@
-module Main where
+module Lambdas2 where
 
 	data Type = BoolType | IntType | WrongType | LType Type Type deriving (Show, Eq, Ord)
 
@@ -48,4 +48,4 @@ module Main where
 	check :: Type -> Bool
 	check t
 		| t == WrongType = False
-		| otherwise True
+		| otherwise = True

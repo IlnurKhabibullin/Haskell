@@ -20,6 +20,6 @@ module Lambdas where
 	eval (Abstr v term)   = Abstr v (eval term)
 	eval (Applic term1 term2) =  case term1 of
 						Var a -> Var a
-						Abstr a term -> eval . replic & term2 term a --replication used in this case
+						Abstr a term -> eval (replic term2 term a) --replication used in this case
 						Applic (Var a) term -> Applic term1 term2
-						Applic term3 term4 -> eval . Applic & (eval term1) term2
+						Applic term3 term4 -> eval (Applic (eval term1) term2)
